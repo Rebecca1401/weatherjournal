@@ -1,0 +1,109 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background: url(images/img-01.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#app {
+    display: grid;
+    grid-auto-rows: minmax(50px, auto);
+    height:90vh;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.holder {
+    padding: 10px;
+    background-color: rgba(59, 74, 107, 0.4);
+}
+
+.textAlign {
+    text-align: center;
+}
+
+.entry {
+    background: rgba(59, 74, 107, 0.4);
+}
+.headline {
+    font-size: 40px;
+    text-transform: uppercase;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.width {
+    width: 100%;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+    display:block;
+    font-size: 27px;
+}
+
+input {
+    display:block;
+    height: 60px;
+    color: #707070;
+    font-size: 27px;
+    padding: 0;
+    border: none;
+}
+
+button {
+    height: 100px;
+    color: #d6e7f1;
+    background-color: #505c2c;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #505c2c;
+    background-color: #d6e7f1;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+textarea {
+    color: #707070;
+    padding: 10px 0 0;
+    border: none;
+    font-size: 27px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */
+    color: #707070;
+
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #707070;
+
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #707070;
+}
