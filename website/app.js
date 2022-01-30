@@ -1,6 +1,6 @@
 /* Global Variables */
-let baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-let apiKey = 'dummy';
+const baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const apiKey = 'dummyKey&units=imperial';
 
 document.getElementById('generate').addEventListener('click', performAction);
 
@@ -22,7 +22,7 @@ function performAction () {
  * @returns {Promise<any>}
  */
 const getWeather = async (baseURL, location, key) => {
-    const res = await fetch (baseURL + location + "&units=metric" + "&APPID=" + key )
+    const res = await fetch (baseURL + location + "&APPID=" + key )
     try {
         const data = await res.json();
         console.log(data);
@@ -79,10 +79,9 @@ const updateUI = async () => {
     try {
         const allData = await request.json()
         console.log(allData);
-        const index = allData.length - 1;
-        document.getElementById('temp').innerHTML = 'Temperature in Celsius: '+ allData[index].temp.toFixed() + '°';
-        document.getElementById('date').innerHTML = 'Date: ' + allData[index].date;
-        document.getElementById('content').innerHTML = 'Your feelings: ' + allData[index].feelings;
+        document.getElementById('temp').innerHTML = 'Temperature: '+ Math.round(allData.temp)+ ' degrees';
+        document.getElementById('date').innerHTML = 'Date: ' + allData.date;
+        document.getElementById('content').innerHTML = 'Your feelings: ' + allData.feelings;
     } catch (error) {
         console.log("error", error);
     }
